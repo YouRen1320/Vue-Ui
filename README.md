@@ -1,5 +1,20 @@
 # View-UI 组件库开发指南
 
+## 当前组件与验证方式
+
+目前实际包含两个组件：`VTransfer`（分组选择、禁用项与左右列表转移）和 `VTest`（把文本中的 `[download]` 替换为按钮并触发事件）。当前是组件开发示例工程，尚未打包为独立 npm 组件库。
+
+`VTest` 使用 `v-html`，仅适用于受信任的本地示例内容；当前没有 HTML 清理逻辑。`test.vue` 是交互演示页面，不是自动化测试。
+
+```bash
+pnpm install --frozen-lockfile
+pnpm dev
+pnpm build
+pnpm docs:build
+```
+
+`pnpm build` 包含类型检查与应用构建；`pnpm docs:build` 构建 VitePress 文档。浏览器中仍需检查穿梭框的分组、禁用项、转移和按钮事件。
+
 欢迎来到 **View-UI** 组件库的开发环境！本项目旨在创建一套高效且易用的 UI 组件集合。以下是针对开发者的工作流程和规范。
 
 ## 项目结构概览
